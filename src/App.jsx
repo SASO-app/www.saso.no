@@ -1,9 +1,12 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
-import About from './components/About'
-import Services from './components/Services'
-import Properties from './components/Properties'
-import WhyUs from './components/WhyUs'
+import OurStory from './components/OurStory'
+import Philosophy from './components/Philosophy'
+import Portfolio from './components/Portfolio'
+import Investors from './components/Investors'
+import Tenants from './components/Tenants'
+import Partners from './components/Partners'
+import Social from './components/Social'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -13,10 +16,13 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <Services />
-        <Properties />
-        <WhyUs />
+        <OurStory />
+        <Philosophy />
+        <Portfolio />
+        <Investors />
+        <Tenants />
+        <Partners />
+        <Social />
         <Contact />
       </main>
       <Footer />

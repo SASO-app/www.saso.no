@@ -10,7 +10,7 @@ const initialForm = {
   navn: '',
   epost: '',
   telefon: '',
-  emne: 'Utleie',
+  'jeg-er': 'Boligeier',
   melding: '',
 }
 
@@ -41,51 +41,52 @@ export default function Contact() {
   }
 
   return (
-    <section id="kontakt" className="bg-navy-950 py-24">
+    <section id="kontakt" className="bg-bone-50 py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2">
         <div>
-          <p className="mb-3 text-sm font-semibold tracking-[0.2em] text-copper-400 uppercase">
+          <p className="text-sm font-semibold tracking-[0.25em] text-oak-600 uppercase">
             Kontakt
           </p>
-          <h2 className="text-3xl font-semibold text-white sm:text-4xl">
-            La oss ta en prat om eiendommen din
+          <h2 className="mt-4 text-3xl font-medium text-ink-950 sm:text-4xl">
+            La oss ta en prat
           </h2>
-          <p className="mt-6 max-w-md text-lg text-white/70">
-            Fyll ut skjemaet, så tar vi kontakt innen én virkedag. Du kan også
-            ringe eller sende e-post direkte.
+          <p className="mt-6 max-w-md text-lg text-ink-700">
+            Enten du vurderer å selge, ønsker å investere sammen med oss,
+            leter etter et sted å bo, eller bare vil si hei – fyll ut
+            skjemaet. Vi svarer selv, som regel innen én virkedag.
           </p>
 
-          <dl className="mt-10 space-y-4 text-white/80">
+          <dl className="mt-10 space-y-4 text-ink-700">
             <div>
-              <dt className="text-sm text-white/50">E-post</dt>
+              <dt className="text-sm text-ink-500">E-post</dt>
               <dd>
-                <a href="mailto:post@saso.no" className="hover:text-copper-400">
+                <a href="mailto:post@saso.no" className="hover:text-oak-600">
                   post@saso.no
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="text-sm text-white/50">Telefon</dt>
+              <dt className="text-sm text-ink-500">Telefon</dt>
               <dd>
-                <a href="tel:+4700000000" className="hover:text-copper-400">
+                <a href="tel:+4700000000" className="hover:text-oak-600">
                   00 00 00 00
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="text-sm text-white/50">Kontor</dt>
+              <dt className="text-sm text-ink-500">Base</dt>
               <dd>Norge</dd>
             </div>
           </dl>
         </div>
 
-        <div className="rounded-2xl bg-white p-8 shadow-xl">
+        <div className="rounded-sm bg-bone-100 p-8">
           {status === 'success' ? (
             <div className="flex h-full flex-col items-center justify-center py-12 text-center">
-              <h3 className="font-serif text-2xl font-semibold text-navy-950">
+              <h3 className="text-2xl font-medium text-ink-950">
                 Takk for din henvendelse!
               </h3>
-              <p className="mt-3 text-navy-900/70">
+              <p className="mt-3 text-ink-700">
                 Vi har mottatt meldingen din og tar kontakt så snart som mulig.
               </p>
             </div>
@@ -106,7 +107,7 @@ export default function Contact() {
               </p>
 
               <div>
-                <label htmlFor="navn" className="block text-sm font-medium text-navy-900">
+                <label htmlFor="navn" className="block text-sm font-medium text-ink-900">
                   Navn
                 </label>
                 <input
@@ -116,13 +117,13 @@ export default function Contact() {
                   required
                   value={form.navn}
                   onChange={handleChange}
-                  className="mt-1.5 w-full rounded-lg border border-navy-950/15 px-4 py-2.5 text-navy-950 focus:border-copper-500 focus:ring-1 focus:ring-copper-500 focus:outline-none"
+                  className="mt-1.5 w-full rounded-sm border border-ink-950/15 bg-bone-50 px-4 py-2.5 text-ink-950 focus:border-oak-500 focus:ring-1 focus:ring-oak-500 focus:outline-none"
                 />
               </div>
 
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="epost" className="block text-sm font-medium text-navy-900">
+                  <label htmlFor="epost" className="block text-sm font-medium text-ink-900">
                     E-post
                   </label>
                   <input
@@ -132,11 +133,11 @@ export default function Contact() {
                     required
                     value={form.epost}
                     onChange={handleChange}
-                    className="mt-1.5 w-full rounded-lg border border-navy-950/15 px-4 py-2.5 text-navy-950 focus:border-copper-500 focus:ring-1 focus:ring-copper-500 focus:outline-none"
+                    className="mt-1.5 w-full rounded-sm border border-ink-950/15 bg-bone-50 px-4 py-2.5 text-ink-950 focus:border-oak-500 focus:ring-1 focus:ring-oak-500 focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label htmlFor="telefon" className="block text-sm font-medium text-navy-900">
+                  <label htmlFor="telefon" className="block text-sm font-medium text-ink-900">
                     Telefon
                   </label>
                   <input
@@ -145,31 +146,31 @@ export default function Contact() {
                     type="tel"
                     value={form.telefon}
                     onChange={handleChange}
-                    className="mt-1.5 w-full rounded-lg border border-navy-950/15 px-4 py-2.5 text-navy-950 focus:border-copper-500 focus:ring-1 focus:ring-copper-500 focus:outline-none"
+                    className="mt-1.5 w-full rounded-sm border border-ink-950/15 bg-bone-50 px-4 py-2.5 text-ink-950 focus:border-oak-500 focus:ring-1 focus:ring-oak-500 focus:outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="emne" className="block text-sm font-medium text-navy-900">
-                  Hva gjelder henvendelsen?
+                <label htmlFor="jeg-er" className="block text-sm font-medium text-ink-900">
+                  Jeg er
                 </label>
                 <select
-                  id="emne"
-                  name="emne"
-                  value={form.emne}
+                  id="jeg-er"
+                  name="jeg-er"
+                  value={form['jeg-er']}
                   onChange={handleChange}
-                  className="mt-1.5 w-full rounded-lg border border-navy-950/15 bg-white px-4 py-2.5 text-navy-950 focus:border-copper-500 focus:ring-1 focus:ring-copper-500 focus:outline-none"
+                  className="mt-1.5 w-full rounded-sm border border-ink-950/15 bg-bone-50 px-4 py-2.5 text-ink-950 focus:border-oak-500 focus:ring-1 focus:ring-oak-500 focus:outline-none"
                 >
-                  <option>Utleie</option>
-                  <option>Salg</option>
-                  <option>Forvaltning</option>
+                  <option>Boligeier</option>
+                  <option>Investor</option>
+                  <option>Leietaker</option>
                   <option>Annet</option>
                 </select>
               </div>
 
               <div>
-                <label htmlFor="melding" className="block text-sm font-medium text-navy-900">
+                <label htmlFor="melding" className="block text-sm font-medium text-ink-900">
                   Melding
                 </label>
                 <textarea
@@ -179,14 +180,14 @@ export default function Contact() {
                   required
                   value={form.melding}
                   onChange={handleChange}
-                  className="mt-1.5 w-full rounded-lg border border-navy-950/15 px-4 py-2.5 text-navy-950 focus:border-copper-500 focus:ring-1 focus:ring-copper-500 focus:outline-none"
+                  className="mt-1.5 w-full rounded-sm border border-ink-950/15 bg-bone-50 px-4 py-2.5 text-ink-950 focus:border-oak-500 focus:ring-1 focus:ring-oak-500 focus:outline-none"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full rounded-full bg-copper-500 px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-copper-600 disabled:opacity-60"
+                className="w-full rounded-full bg-ink-950 px-6 py-3.5 text-sm font-semibold text-bone-50 transition-colors hover:bg-oak-600 disabled:opacity-60"
               >
                 {status === 'sending' ? 'Sender...' : 'Send henvendelse'}
               </button>

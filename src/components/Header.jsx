@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
+import Logo from './Logo'
 
 const NAV_LINKS = [
-  { href: '#om-oss', label: 'Om oss' },
-  { href: '#tjenester', label: 'Tjenester' },
-  { href: '#eiendommer', label: 'Eiendommer' },
-  { href: '#hvorfor-oss', label: 'Hvorfor oss' },
-  { href: '#kontakt', label: 'Kontakt' },
+  { href: '#historien', label: 'Historien' },
+  { href: '#prosjekter', label: 'Prosjekter' },
+  { href: '#investorer', label: 'Investorer' },
+  { href: '#leietakere', label: 'Leietakere' },
+  { href: '#partnere', label: 'Partnere' },
+  { href: '#folg-oss', label: 'Følg oss' },
 ]
 
 export default function Header() {
@@ -21,30 +23,23 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
         scrolled
-          ? 'bg-sand-50/95 shadow-sm backdrop-blur'
-          : 'bg-transparent'
+          ? 'border-line bg-bone-50/90 backdrop-blur'
+          : 'border-transparent bg-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a
-          href="#hjem"
-          className={`font-serif text-xl font-semibold tracking-tight ${
-            scrolled ? 'text-navy-950' : 'text-white'
-          }`}
-        >
-          SASO <span className="text-copper-400">Eiendom</span>
+        <a href="#hjem" aria-label="SASO Eiendom, til toppen">
+          <Logo />
         </a>
 
-        <nav className="hidden gap-8 md:flex">
+        <nav className="hidden gap-7 lg:flex">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-copper-500 ${
-                scrolled ? 'text-navy-800' : 'text-white/90'
-              }`}
+              className="text-sm font-medium text-ink-700 transition-colors hover:text-oak-600"
             >
               {link.label}
             </a>
@@ -53,7 +48,7 @@ export default function Header() {
 
         <a
           href="#kontakt"
-          className="hidden rounded-full bg-copper-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-copper-600 md:inline-block"
+          className="hidden rounded-full bg-ink-950 px-5 py-2.5 text-sm font-semibold text-bone-50 transition-colors hover:bg-oak-600 lg:inline-block"
         >
           Ta kontakt
         </a>
@@ -63,11 +58,9 @@ export default function Header() {
           onClick={() => setOpen((v) => !v)}
           aria-label="Åpne meny"
           aria-expanded={open}
-          className={`flex h-10 w-10 items-center justify-center rounded-full md:hidden ${
-            scrolled ? 'text-navy-950' : 'text-white'
-          }`}
+          className="flex h-10 w-10 items-center justify-center text-ink-950 lg:hidden"
         >
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
             {open ? (
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
             ) : (
@@ -78,13 +71,13 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-1 bg-sand-50 px-6 pb-6 shadow-sm md:hidden">
+        <nav className="flex flex-col gap-1 border-t border-line bg-bone-50 px-6 pb-6 lg:hidden">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-3 text-base font-medium text-navy-900 hover:bg-sand-100"
+              className="rounded-lg px-3 py-3 text-base font-medium text-ink-950 hover:bg-bone-100"
             >
               {link.label}
             </a>
@@ -92,7 +85,7 @@ export default function Header() {
           <a
             href="#kontakt"
             onClick={() => setOpen(false)}
-            className="mt-2 rounded-full bg-copper-500 px-4 py-3 text-center text-sm font-semibold text-white"
+            className="mt-2 rounded-full bg-ink-950 px-4 py-3 text-center text-sm font-semibold text-bone-50"
           >
             Ta kontakt
           </a>
