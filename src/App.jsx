@@ -1,32 +1,19 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
-import Hero from './components/Hero'
-import OurStory from './components/OurStory'
-import Philosophy from './components/Philosophy'
-import Portfolio from './components/Portfolio'
-import Investors from './components/Investors'
-import Tenants from './components/Tenants'
-import Partners from './components/Partners'
-import Social from './components/Social'
-import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Home from './pages/Home'
+import Kalkulator from './pages/Kalkulator'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
-      <main>
-        <Hero />
-        <OurStory />
-        <Philosophy />
-        <Portfolio />
-        <Investors />
-        <Tenants />
-        <Partners />
-        <Social />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/flippkalkulator" element={<Kalkulator />} />
+      </Routes>
       <Footer />
-    </>
+    </BrowserRouter>
   )
 }
 

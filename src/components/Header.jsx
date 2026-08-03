@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import Logo from './Logo'
 
 const NAV_LINKS = [
-  { href: '#historien', label: 'Historien' },
-  { href: '#prosjekter', label: 'Prosjekter' },
-  { href: '#investorer', label: 'Investorer' },
-  { href: '#leietakere', label: 'Leietakere' },
-  { href: '#partnere', label: 'Partnere' },
-  { href: '#folg-oss', label: 'Følg oss' },
+  { href: '/#historien', label: 'Historien' },
+  { href: '/#prosjekter', label: 'Prosjekter' },
+  { href: '/#investorer', label: 'Investorer' },
+  { href: '/#leietakere', label: 'Leietakere' },
+  { href: '/#partnere', label: 'Partnere' },
+  { href: '/#folg-oss', label: 'Følg oss' },
+  { href: '/flippkalkulator', label: 'Kalkulator' },
 ]
 
 export default function Header() {
@@ -30,9 +32,9 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#hjem" aria-label="SASO Eiendom, til toppen">
+        <Link to="/" aria-label="SASO Eiendom, til forsiden">
           <Logo />
-        </a>
+        </Link>
 
         <nav className="hidden gap-7 lg:flex">
           {NAV_LINKS.map((link) => (
@@ -47,7 +49,7 @@ export default function Header() {
         </nav>
 
         <a
-          href="#kontakt"
+          href="/#kontakt"
           className="hidden rounded-full bg-ink-950 px-5 py-2.5 text-sm font-semibold text-bone-50 transition-colors hover:bg-oak-600 lg:inline-block"
         >
           Ta kontakt
@@ -83,7 +85,7 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#kontakt"
+            href="/#kontakt"
             onClick={() => setOpen(false)}
             className="mt-2 rounded-full bg-ink-950 px-4 py-3 text-center text-sm font-semibold text-bone-50"
           >
