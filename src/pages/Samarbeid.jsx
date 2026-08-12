@@ -12,6 +12,7 @@ import SelectedCollaborations from '../components/samarbeid/SelectedCollaboratio
 import Audience from '../components/samarbeid/Audience'
 import MediaPackage from '../components/samarbeid/MediaPackage'
 import Collaboration from '../components/samarbeid/Collaboration'
+import PressMentions from '../components/samarbeid/PressMentions'
 import FinalCta from '../components/samarbeid/FinalCta'
 import Footer from '../components/Footer'
 
@@ -43,6 +44,7 @@ function SamarbeidContent() {
         <Audience />
         <MediaPackage />
         <Collaboration />
+        <PressMentions />
         <FinalCta />
       </main>
       <Footer />

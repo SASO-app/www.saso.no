@@ -90,6 +90,10 @@ export const copy = {
       maritaLabel: 'Marita',
       note: 'Kanalene har egne, dokumenterte publikum — vi hevder ikke identisk eller unik samlet rekkevidde mellom dem.',
     },
+    press: {
+      eyebrow: 'Omtalt i pressen',
+      title: 'Ikke bare tall vi selv har regnet ut',
+    },
     collaboration: {
       eyebrow: 'Slik kan vi samarbeide',
       title: 'Måter å samarbeide på',
@@ -198,6 +202,10 @@ export const copy = {
       sasoLabel: 'SASO Eiendom',
       maritaLabel: 'Marita',
       note: "Each channel has its own documented audience — we don't claim identical or unique combined reach between them.",
+    },
+    press: {
+      eyebrow: 'In the press',
+      title: "Not just numbers we made up ourselves",
     },
     collaboration: {
       eyebrow: 'How we can work together',
