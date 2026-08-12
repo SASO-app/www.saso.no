@@ -1,6 +1,6 @@
 import { useLang } from '../../lib/LangContext'
 import { copy } from '../../data/samarbeid'
-import { pressClips } from '../../data/presse'
+import { pressClips, pressLogos } from '../../data/presse'
 
 export default function PressMentions() {
   const { lang } = useLang()
@@ -21,10 +21,18 @@ export default function PressMentions() {
               href={clip.url}
               target="_blank"
               rel="noreferrer"
-              className="flex flex-col gap-1 py-4 transition-colors hover:text-oak-600 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6"
+              className="flex flex-col gap-2 py-4 transition-colors hover:text-oak-600 sm:flex-row sm:items-center sm:justify-between sm:gap-6"
             >
               <span className="font-medium text-ink-950">{clip.title}</span>
-              <span className="shrink-0 text-sm text-ink-500">{clip.publication}</span>
+              {pressLogos[clip.publication] ? (
+                <img
+                  src={pressLogos[clip.publication]}
+                  alt={clip.publication}
+                  className="h-4 w-auto shrink-0"
+                />
+              ) : (
+                <span className="shrink-0 text-sm text-ink-500">{clip.publication}</span>
+              )}
             </a>
           ))}
         </div>

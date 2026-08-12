@@ -1,4 +1,11 @@
 // Presseomtale av SASO Eiendom. Legg til nye saker her etter hvert som de publiseres.
+// Logoer: kun frie/PD-textlogo-lisensierte varianter fra Wikimedia Commons.
+// Mangler en publikasjon logo her, faller den tilbake til tekst i UI-et.
+export const pressLogos = {
+  'Bergensavisen (BA)': '/press-logos/ba.svg',
+  Nettavisen: '/press-logos/nettavisen.svg',
+}
+
 export const pressClips = [
   {
     publication: 'Bergensavisen (BA)',

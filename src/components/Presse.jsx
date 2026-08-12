@@ -1,4 +1,4 @@
-import { pressClips } from '../data/presse'
+import { pressClips, pressLogos } from '../data/presse'
 
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('nb-NO', {
@@ -34,9 +34,17 @@ export default function Presse() {
               rel="noreferrer"
               className="block rounded-sm border border-line bg-bone-50 p-6 transition-colors hover:border-oak-500"
             >
-              <p className="text-xs font-semibold tracking-[0.2em] text-oak-600 uppercase">
-                {clip.publication}
-              </p>
+              {pressLogos[clip.publication] ? (
+                <img
+                  src={pressLogos[clip.publication]}
+                  alt={clip.publication}
+                  className="h-6 w-auto"
+                />
+              ) : (
+                <p className="text-xs font-semibold tracking-[0.2em] text-oak-600 uppercase">
+                  {clip.publication}
+                </p>
+              )}
               <h3 className="mt-3 font-serif text-xl text-ink-950">{clip.title}</h3>
               <p className="mt-4 text-sm text-ink-500">{formatDate(clip.date)} · Les saken →</p>
             </a>
