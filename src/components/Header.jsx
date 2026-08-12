@@ -5,6 +5,7 @@ import Logo from './Logo'
 const NAV_LINKS = [
   { href: '/#historien', label: 'Historien' },
   { href: '/#prosjekter', label: 'Prosjekter' },
+  { href: '/#presse', label: 'Presse' },
   { href: '/#investorer', label: 'Investorer' },
   { href: '/#leietakere', label: 'Leietakere' },
   { href: '/#partnere', label: 'Partnere' },

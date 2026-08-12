@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import OurStory from '../components/OurStory'
 import Philosophy from '../components/Philosophy'
 import Portfolio from '../components/Portfolio'
+import Presse from '../components/Presse'
 import Investors from '../components/Investors'
 import Tenants from '../components/Tenants'
 import Partners from '../components/Partners'
@@ -22,6 +23,7 @@ export default function Home() {
       <OurStory />
       <Philosophy />
       <Portfolio />
+      <Presse />
       <Investors />
       <Tenants />
       <Partners />
