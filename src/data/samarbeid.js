@@ -26,14 +26,17 @@ export const copy = {
     bigNumber: {
       eyebrow: 'Dokumentert rekkevidde',
       headline: 'dokumenterte visninger',
-      note: 'Samlet dokumentert antall videovisninger på Instagram og Facebook. Ikke et mål på unike seere — og historikken er ikke komplett, så tallet er et gulv, ikke et tak.',
+      note: 'Samlet dokumentert antall videovisninger på Instagram, Facebook og TikTok. Ikke et mål på unike seere. TikTok-tallet dekker de siste 12 månedene, og Facebook-historikken er ikke komplett — periodene er derfor ikke identiske, og totalen er et dokumentert minimum.',
       instagramLabel: 'Instagram',
       facebookLabel: 'Facebook',
+      tiktokLabel: 'TikTok (siste 12 mnd)',
       statViews: 'visninger',
       statReach: 'rekkevidde',
       statInteractions: 'interaksjoner',
       statFollows: 'følgere fra innhold',
       statPosts: 'publiseringer',
+      statFollowGrowth: 'nye følgere (12 mnd)',
+      statProfileViews: 'profilvisninger',
     },
     organic: {
       eyebrow: 'Distribusjonsmotoren',
@@ -80,7 +83,8 @@ export const copy = {
       tiktokIntro: 'Partnerskapet inkluderer også Maritas TikTok.',
       norwayLabel: 'norsk publikum',
       genderLabel: 'kvinner / menn',
-      note: 'TikTok-data er foreløpig ikke komplett. Et større datauttrekk er bestilt, og tallene oppdateres når det er klart.',
+      followersLabel: 'følgere',
+      note: 'Basert på TikTok Studio-eksport for de siste 12 månedene.',
     },
     mediaPackage: {
       eyebrow: 'Én historie. Flere kanaler.',
@@ -139,14 +143,17 @@ export const copy = {
     bigNumber: {
       eyebrow: 'Documented reach',
       headline: 'documented views',
-      note: 'Combined documented video views across Instagram and Facebook. Not a measure of unique viewers — and the history isn’t complete, so this is a floor, not a ceiling.',
+      note: 'Combined documented video views across Instagram, Facebook and TikTok. Not a measure of unique viewers. The TikTok figure covers the last 12 months, and the Facebook history is incomplete — the periods aren’t identical, so this is a documented minimum.',
       instagramLabel: 'Instagram',
       facebookLabel: 'Facebook',
+      tiktokLabel: 'TikTok (last 12 months)',
       statViews: 'views',
       statReach: 'reach',
       statInteractions: 'interactions',
       statFollows: 'follows from content',
       statPosts: 'publications',
+      statFollowGrowth: 'new follows (12 mo)',
+      statProfileViews: 'profile views',
     },
     organic: {
       eyebrow: 'The distribution engine',
@@ -193,7 +200,8 @@ export const copy = {
       tiktokIntro: "The partnership also includes Marita's TikTok.",
       norwayLabel: 'Norwegian audience',
       genderLabel: 'women / men',
-      note: 'TikTok data is currently incomplete. A larger data export has been requested, and figures will update once available.',
+      followersLabel: 'followers',
+      note: 'Based on a TikTok Studio export covering the last 12 months.',
     },
     mediaPackage: {
       eyebrow: 'One story. Multiple channels.',
@@ -232,7 +240,9 @@ export const copy = {
 }
 
 export const metrics = {
-  cross: { no: '8,1M+', en: '8.1M+' },
+  // 19M+ er avsenders anbefalte, avrundede pitch-headline for summen av dokumenterte
+  // visninger (IG + FB + TikTok siste 12 mnd — periodene er ikke identiske, se bigNumber.note).
+  cross: { no: '19M+', en: '19M+' },
   instagram: {
     views: { no: '6,18M+', en: '6.18M+' },
     reach: { no: '4,10M+', en: '4.10M+' },
@@ -249,6 +259,12 @@ export const metrics = {
     posts: 106,
     posts50k: 9,
     topVideo: 117689,
+  },
+  tiktok: {
+    views: { no: '10,87M+', en: '10.87M+' },
+    interactions: 115698,
+    followGrowth: 3604,
+    profileViews: 96337,
   },
 }
 
@@ -309,7 +325,13 @@ export const gorillaCase = {
 export const gerflorCase = { views: 86100, interactions: 1200, saves: 545, shares: 317, follows: 209 }
 export const duriDecoCase = { views: 163400, interactions: 898, saves: 329, shares: 144, follows: 189, parts: 3 }
 
-export const tiktok = { handle: '@maritabauge', norwayPct: 83.7, femalePct: 58, malePct: 42 }
+export const tiktok = {
+  handle: '@maritabauge',
+  followers: 12527,
+  norwayPct: 83.7,
+  femalePct: 58,
+  malePct: 42,
+}
 
 export const channels = {
   saso: ['Instagram', 'Facebook'],

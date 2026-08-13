@@ -1,4 +1,4 @@
-import { useLang } from '../../lib/LangContext'
+import { useLang, formatNumber } from '../../lib/LangContext'
 import { copy, tiktok } from '../../data/samarbeid'
 
 export default function Audience() {
@@ -26,6 +26,12 @@ export default function Audience() {
               {tiktok.femalePct}% / {tiktok.malePct}%
             </p>
             <p className="mt-1 text-sm text-ink-500">{t.genderLabel}</p>
+          </div>
+          <div className="border-t border-line pt-5">
+            <p className="text-4xl font-medium text-ink-950">
+              {formatNumber(tiktok.followers, lang)}
+            </p>
+            <p className="mt-1 text-sm text-ink-500">{t.followersLabel}</p>
           </div>
         </div>
 

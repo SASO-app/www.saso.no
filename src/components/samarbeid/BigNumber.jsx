@@ -15,6 +15,7 @@ export default function BigNumber() {
   const t = copy[lang].bigNumber
   const ig = metrics.instagram
   const fb = metrics.facebook
+  const tt = metrics.tiktok
 
   return (
     <section id="samarbeid-tall" className="bg-ink-950 py-24 text-bone-50 sm:py-32">
@@ -49,6 +50,18 @@ export default function BigNumber() {
             <Stat value={fb.views[lang]} label={t.statViews} />
             <Stat value={fb.reach[lang]} label={t.statReach} />
             <Stat value={formatNumber(fb.posts, lang)} label={t.statPosts} />
+          </div>
+        </div>
+
+        <div className="mt-14">
+          <p className="mb-5 text-xs font-semibold tracking-[0.2em] text-oak-400 uppercase">
+            {t.tiktokLabel}
+          </p>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+            <Stat value={tt.views[lang]} label={t.statViews} />
+            <Stat value={formatNumber(tt.interactions, lang)} label={t.statInteractions} />
+            <Stat value={formatNumber(tt.followGrowth, lang)} label={t.statFollowGrowth} />
+            <Stat value={formatNumber(tt.profileViews, lang)} label={t.statProfileViews} />
           </div>
         </div>
       </div>
