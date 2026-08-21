@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Hero from '../components/Hero'
+import TrustedBrands from '../components/TrustedBrands'
 import OurStory from '../components/OurStory'
 import Philosophy from '../components/Philosophy'
 import Portfolio from '../components/Portfolio'
@@ -20,6 +21,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
+      <TrustedBrands />
       <OurStory />
       <Philosophy />
       <Portfolio />
