@@ -8,13 +8,13 @@ export default function TrustedBrands() {
           Merkevarer vi samarbeider med
         </p>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-6">
           {trustedBrands.map((brand) => (
             <img
               key={brand.name}
               src={brand.src}
               alt={brand.name}
-              className="h-10 w-auto object-contain sm:h-12"
+              className="h-8 w-auto object-contain sm:h-10"
             />
           ))}
         </div>

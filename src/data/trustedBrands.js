@@ -6,4 +6,5 @@ export const trustedBrands = [
   { name: 'Solid Gear', src: '/logos/solid-gear.png' },
   { name: 'Epoq', src: '/logos/epoq-elkjop.png' },
   { name: 'Duri', src: '/logos/duri.png' },
+  { name: 'Neumann', src: '/logos/neumann.png' },
 ]
