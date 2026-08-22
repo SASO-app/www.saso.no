@@ -10,7 +10,7 @@ const PROJECTS = [
   },
   {
     tag: 'Flip',
-    title: 'Rekkehus, sentrum',
+    title: 'Leilighet, sentrum',
     description:
       'Kjøpt med uforløst potensial, renovert til høy standard og solgt videre.',
     variant: 'deep',
