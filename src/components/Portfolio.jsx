@@ -3,10 +3,11 @@ import ImageBlock from './ImageBlock'
 const PROJECTS = [
   {
     tag: 'Renovering',
-    title: 'Enebolig fra 1968',
+    title: 'Stort rekkehus',
     description:
-      'Fra mørk og oppdelt til lys, åpen familiebolig med nytt kjøkken og bad.',
+      'Fra mørk og oppdelt til lys, åpen familiebolig med nytt kjøkken og to bad.',
     variant: 'warm',
+    image: '/projects/stort-rekkehus.jpg',
   },
   {
     tag: 'Flip',
