@@ -14,6 +14,7 @@ const PROJECTS = [
     description:
       'Kjøpt med uforløst potensial, renovert til høy standard og solgt videre.',
     variant: 'deep',
+    image: '/projects/leilighet-sentrum.jpg',
   },
   {
     tag: 'Utleie',
@@ -46,10 +47,18 @@ export default function Portfolio() {
         <div className="mt-14 grid gap-8 md:grid-cols-3">
           {PROJECTS.map((project) => (
             <div key={project.title}>
-              <ImageBlock
-                variant={project.variant}
-                className="aspect-[4/5] w-full rounded-sm text-oak-500"
-              />
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="aspect-[4/5] w-full rounded-sm object-cover"
+                />
+              ) : (
+                <ImageBlock
+                  variant={project.variant}
+                  className="aspect-[4/5] w-full rounded-sm text-oak-500"
+                />
+              )}
               <span className="mt-5 inline-block text-xs font-semibold tracking-[0.2em] text-oak-600 uppercase">
                 {project.tag}
               </span>
