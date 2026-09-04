@@ -1,5 +1,3 @@
-import ImageBlock from './ImageBlock'
-
 const FEATURES = [
   'Moderne interiør, ikke minste-standard',
   'Gjennomtenkte, funksjonelle planløsninger',
@@ -43,13 +41,15 @@ export default function Tenants() {
           </div>
 
           <div className="grid grid-cols-2 gap-4">
-            <ImageBlock
-              variant="soft"
-              className="aspect-[3/4] w-full rounded-sm text-oak-500"
+            <img
+              src="/projects/leietaker-kjokken.jpg"
+              alt="Kjøkken i en av utleieboligene"
+              className="aspect-[3/4] w-full rounded-sm object-cover"
             />
-            <ImageBlock
-              variant="warm"
-              className="mt-8 aspect-[3/4] w-full rounded-sm text-oak-500"
+            <img
+              src="/projects/leietaker-soverom.jpg"
+              alt="Soverom i en av utleieboligene"
+              className="mt-8 aspect-[3/4] w-full rounded-sm object-cover"
             />
           </div>
         </div>
