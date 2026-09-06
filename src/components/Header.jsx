@@ -2,15 +2,16 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
 
+// Investorer og Kalkulator er midlertidig skjult (ikke ferdige for offentlig visning).
+// Koden ligger fortsatt i src/components/Investors.jsx og src/pages/Kalkulator.jsx —
+// legg linkene tilbake her når de skal være synlige igjen.
 const NAV_LINKS = [
   { href: '/#historien', label: 'Historien' },
   { href: '/#prosjekter', label: 'Prosjekter' },
   { href: '/#presse', label: 'Presse' },
-  { href: '/#investorer', label: 'Investorer' },
   { href: '/#leietakere', label: 'Leietakere' },
   { href: '/#partnere', label: 'Partnere' },
   { href: '/#folg-oss', label: 'Følg oss' },
-  { href: '/flippkalkulator', label: 'Kalkulator' },
 ]
 
 export default function Header() {
