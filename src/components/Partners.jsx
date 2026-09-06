@@ -8,6 +8,13 @@ function encode(data) {
 
 const initialForm = { merkevare: '', kontaktperson: '', epost: '', melding: '' }
 
+const PREVIOUS_PARTNERS = [
+  { name: 'Neumann', src: '/logos/neumann.png' },
+  { name: 'Snickers Workwear', src: '/logos/snickers-workwear.png' },
+  { name: 'Gerflor', src: '/logos/gerflor.png' },
+  { name: 'Solid Gear', src: '/logos/solid-gear.png' },
+]
+
 const POINTS = [
   'Vi lager autentisk innhold om ekte prosjekter, ikke oppsatte reklamesnutter.',
   'Hvert prosjekt dokumenteres profesjonelt fra start til slutt.',
@@ -71,21 +78,19 @@ export default function Partners() {
                 Tidligere samarbeid
               </p>
               <div className="flex flex-wrap gap-3">
-                {['Merkevare', 'Merkevare', 'Merkevare', 'Merkevare'].map(
-                  (label, i) => (
-                    <div
-                      key={i}
-                      className="flex h-14 w-32 items-center justify-center rounded-sm border border-line bg-bone-100 text-xs tracking-widest text-ink-500 uppercase"
-                    >
-                      {label}
-                    </div>
-                  ),
-                )}
+                {PREVIOUS_PARTNERS.map((partner) => (
+                  <div
+                    key={partner.name}
+                    className="flex h-14 w-32 items-center justify-center rounded-sm border border-line bg-bone-100 p-3"
+                  >
+                    <img
+                      src={partner.src}
+                      alt={partner.name}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                ))}
               </div>
-              <p className="mt-3 text-sm text-ink-500 italic">
-                Logoer og kundeuttalelser legges til etter hvert som
-                samarbeidene offentliggjøres.
-              </p>
             </div>
           </div>
 
