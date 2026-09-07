@@ -1,4 +1,6 @@
 import ImageBlock from './ImageBlock'
+import ReelTile from './ReelTile'
+import { socialReels } from '../data/socialReels'
 
 const INSTAGRAM_VARIANTS = ['warm', 'soft', 'deep', 'soft', 'warm', 'deep']
 
@@ -53,13 +55,21 @@ export default function Social() {
             </a>
           </div>
           <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
-            {INSTAGRAM_VARIANTS.map((variant, i) => (
-              <ImageBlock
-                key={i}
-                variant={variant}
-                className="aspect-square w-full rounded-sm text-oak-500"
-              />
-            ))}
+            {socialReels.length > 0
+              ? socialReels.map((reel, i) => (
+                  <ReelTile
+                    key={reel.url}
+                    reel={reel}
+                    variant={INSTAGRAM_VARIANTS[i % INSTAGRAM_VARIANTS.length]}
+                  />
+                ))
+              : INSTAGRAM_VARIANTS.map((variant, i) => (
+                  <ImageBlock
+                    key={i}
+                    variant={variant}
+                    className="aspect-square w-full rounded-sm text-oak-500"
+                  />
+                ))}
           </div>
         </div>
 

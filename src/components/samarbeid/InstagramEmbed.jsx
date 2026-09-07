@@ -1,21 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-
-let embedScriptPromise = null
-function loadInstagramEmbedScript() {
-  if (typeof window === 'undefined') return Promise.resolve(null)
-  if (window.instgrm) return Promise.resolve(window.instgrm)
-  if (embedScriptPromise) return embedScriptPromise
-
-  embedScriptPromise = new Promise((resolve, reject) => {
-    const script = document.createElement('script')
-    script.src = 'https://www.instagram.com/embed.js'
-    script.async = true
-    script.onload = () => resolve(window.instgrm)
-    script.onerror = reject
-    document.body.appendChild(script)
-  })
-  return embedScriptPromise
-}
+import { loadInstagramEmbedScript } from '../../lib/instagramEmbed'
 
 // Laster Instagrams offisielle embed kun når kortet faktisk scrolles inn i visning.
 export default function InstagramEmbed({ url, fallbackLabel, className = '' }) {
