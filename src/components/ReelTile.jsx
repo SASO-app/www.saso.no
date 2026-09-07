@@ -23,7 +23,7 @@ export default function ReelTile({ reel, variant }) {
 
   if (active) {
     return (
-      <div className="aspect-square w-full overflow-hidden rounded-sm bg-bone-50">
+      <div className="aspect-[9/16] w-full overflow-hidden rounded-sm bg-bone-50">
         <blockquote
           className="instagram-media"
           data-instgrm-permalink={reel.url}
@@ -43,7 +43,7 @@ export default function ReelTile({ reel, variant }) {
       type="button"
       onClick={handleClick}
       aria-label="Spill av Reel"
-      className="group relative block aspect-square w-full overflow-hidden rounded-sm"
+      className="group relative block aspect-[9/16] w-full overflow-hidden rounded-sm"
     >
       {reel.poster ? (
         <img src={reel.poster} alt="" className="h-full w-full object-cover" />

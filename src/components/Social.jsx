@@ -67,7 +67,7 @@ export default function Social() {
                   <ImageBlock
                     key={i}
                     variant={variant}
-                    className="aspect-square w-full rounded-sm text-oak-500"
+                    className="aspect-[9/16] w-full rounded-sm text-oak-500"
                   />
                 ))}
           </div>
