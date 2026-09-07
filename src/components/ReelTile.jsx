@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ImageBlock from './ImageBlock'
 import { loadInstagramEmbedScript } from '../lib/instagramEmbed'
 
@@ -10,11 +10,60 @@ function PlayIcon() {
   )
 }
 
+// Instagrams embed har en fast minimumsbredde (326px) og kan ikke gjøres
+// mindre med CSS alene. I en smal rute (som denne 9:16-ruten i et
+// seks-kolonners rutenett) ville den derfor rendres for stor og bli
+// beskåret av overflow-hidden. Løsningen: la embeden rendres i sin
+// naturlige størrelse, mål den faktiske bredden når iframen dukker opp,
+// og skaler hele elementet ned proporsjonalt slik at hele videoen blir
+// synlig i stedet for bare et hjørne av den.
+function useFitScale(active) {
+  const containerRef = useRef(null)
+  const wrapperRef = useRef(null)
+  const [scale, setScale] = useState(null)
+
+  useEffect(() => {
+    if (!active) return undefined
+    let cancelled = false
+    let tries = 0
+
+    const tryFit = () => {
+      const iframe = wrapperRef.current?.querySelector('iframe')
+      const container = containerRef.current
+      if (!iframe || !container) return false
+      const embedWidth = iframe.offsetWidth
+      const containerWidth = container.offsetWidth
+      if (embedWidth > 0 && containerWidth > 0) {
+        setScale(containerWidth / embedWidth)
+        return true
+      }
+      return false
+    }
+
+    const interval = setInterval(() => {
+      tries += 1
+      if (cancelled) return
+      if (tryFit() || tries > 40) {
+        clearInterval(interval)
+        if (tries > 40 && !cancelled) setScale((s) => s ?? 1)
+      }
+    }, 150)
+
+    return () => {
+      cancelled = true
+      clearInterval(interval)
+    }
+  }, [active])
+
+  return { containerRef, wrapperRef, scale }
+}
+
 // Viser et poster-bilde med avspillingsknapp. Først når noen klikker,
 // lastes den ekte Instagram-embeden inn — holder rutenettet raskt selv
 // med flere ruter på én side.
 export default function ReelTile({ reel, variant }) {
   const [active, setActive] = useState(false)
+  const { containerRef, wrapperRef, scale } = useFitScale(active)
 
   const handleClick = () => {
     setActive(true)
@@ -23,17 +72,26 @@ export default function ReelTile({ reel, variant }) {
 
   if (active) {
     return (
-      <div className="aspect-[9/16] w-full overflow-hidden rounded-sm bg-bone-50">
-        <blockquote
-          className="instagram-media"
-          data-instgrm-permalink={reel.url}
-          data-instgrm-version="14"
-          style={{ margin: 0, width: '100%' }}
+      <div
+        ref={containerRef}
+        className="relative aspect-[9/16] w-full overflow-hidden rounded-sm bg-bone-50"
+      >
+        <div
+          ref={wrapperRef}
+          className="origin-top-left transition-opacity duration-300"
+          style={{ transform: scale ? `scale(${scale})` : undefined, opacity: scale ? 1 : 0 }}
         >
-          <a href={reel.url} target="_blank" rel="noreferrer">
-            Se på Instagram
-          </a>
-        </blockquote>
+          <blockquote
+            className="instagram-media"
+            data-instgrm-permalink={reel.url}
+            data-instgrm-version="14"
+            style={{ margin: 0 }}
+          >
+            <a href={reel.url} target="_blank" rel="noreferrer">
+              Se på Instagram
+            </a>
+          </blockquote>
+        </div>
       </div>
     )
   }
