@@ -19,9 +19,8 @@ const PROJECTS = [
   },
   {
     tag: 'Utleie',
-    title: 'Leilighet med utsikt',
-    description:
-      'Møblert utleiebolig med skandinavisk interiør og smarte løsninger.',
+    title: 'Leilighet med 5 soverom',
+    description: 'Møblert utleiebolig sentralt i Bergen sentrum.',
     variant: 'soft',
   },
 ]
