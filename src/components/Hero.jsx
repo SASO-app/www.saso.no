@@ -1,5 +1,3 @@
-import ImageBlock from './ImageBlock'
-
 export default function Hero() {
   return (
     <section id="hjem" className="bg-bone-50 pt-36 pb-16 sm:pt-44">
@@ -32,9 +30,10 @@ export default function Hero() {
       </div>
 
       <div className="mx-auto mt-16 max-w-6xl px-6">
-        <ImageBlock
-          variant="warm"
-          className="aspect-[16/9] w-full rounded-sm text-oak-600 sm:aspect-[21/9]"
+        <img
+          src="/hero/sander-marita-under-oppussing.jpg"
+          alt="Sander og Marita på jobb under en oppussing"
+          className="aspect-[16/9] w-full rounded-sm object-cover"
         />
       </div>
     </section>
