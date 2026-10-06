@@ -1,12 +1,11 @@
-import ImageBlock from './ImageBlock'
-
 export default function OurStory() {
   return (
     <section id="historien" className="bg-bone-50 py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl gap-14 px-6 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-        <ImageBlock
-          variant="soft"
-          className="aspect-[4/5] w-full rounded-sm text-oak-500 lg:order-2"
+        <img
+          src="/story/sander-marita-fasade.jpg"
+          alt="Sander og Marita i samtale utenfor et av prosjektene"
+          className="aspect-[4/5] w-full rounded-sm object-cover lg:order-2"
         />
 
         <div className="lg:order-1">
