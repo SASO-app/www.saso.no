@@ -8,4 +8,10 @@ export const podcasts = [
     url: 'https://www.youtube.com/watch?v=8jVJJin3ANM',
     thumbnail: 'https://i.ytimg.com/vi/8jVJJin3ANM/hqdefault.jpg',
   },
+  {
+    title: 'EP. 292 Saso Eiendom | Har kjøpt 8 eiendommer på 2 år',
+    channel: 'Impressions Podcast',
+    url: 'https://www.youtube.com/watch?v=tkCbMGrmtKI',
+    thumbnail: 'https://i.ytimg.com/vi/tkCbMGrmtKI/hqdefault.jpg',
+  },
 ]
