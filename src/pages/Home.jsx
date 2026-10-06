@@ -5,6 +5,7 @@ import OurStory from '../components/OurStory'
 import Philosophy from '../components/Philosophy'
 import Portfolio from '../components/Portfolio'
 import Presse from '../components/Presse'
+import Podcasts from '../components/Podcasts'
 import Tenants from '../components/Tenants'
 import Partners from '../components/Partners'
 import Social from '../components/Social'
@@ -25,6 +26,7 @@ export default function Home() {
       <Philosophy />
       <Portfolio />
       <Presse />
+      <Podcasts />
       {/* Investorer midlertidig skjult — se src/components/Investors.jsx */}
       <Tenants />
       <Partners />
