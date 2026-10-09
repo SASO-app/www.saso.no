@@ -10,7 +10,7 @@ const PROJECTS = [
     image: '/projects/stort-rekkehus.jpg',
   },
   {
-    tag: 'Flip',
+    tag: 'Flipp',
     title: 'Leilighet, sentrum',
     description:
       'Kjøpt med uforløst potensial, renovert til høy standard og solgt videre.',
@@ -22,6 +22,7 @@ const PROJECTS = [
     title: 'Leilighet med 5 soverom',
     description: 'Møblert utleiebolig sentralt i Bergen sentrum.',
     variant: 'soft',
+    image: '/projects/leilighet-5-soverom.jpg',
   },
 ]
 
