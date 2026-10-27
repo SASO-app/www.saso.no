@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
+import Vasker from './pages/Vasker'
 import Kalkulator from './pages/Kalkulator'
 
 const Samarbeid = lazy(() => import('./pages/Samarbeid'))
@@ -23,6 +24,7 @@ function App() {
       <Routes>
         <Route element={<SiteLayout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/vasker" element={<Vasker />} />
           <Route path="/flippkalkulator" element={<Kalkulator />} />
         </Route>
         <Route

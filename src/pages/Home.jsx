@@ -4,6 +4,7 @@ import TrustedBrands from '../components/TrustedBrands'
 import OurStory from '../components/OurStory'
 import Philosophy from '../components/Philosophy'
 import Portfolio from '../components/Portfolio'
+import VaskerTeaser from '../components/VaskerTeaser'
 import Presse from '../components/Presse'
 import Podcasts from '../components/Podcasts'
 import Tenants from '../components/Tenants'
@@ -25,6 +26,7 @@ export default function Home() {
       <OurStory />
       <Philosophy />
       <Portfolio />
+      <VaskerTeaser />
       <Presse />
       <Podcasts />
       {/* Investorer midlertidig skjult — se src/components/Investors.jsx */}

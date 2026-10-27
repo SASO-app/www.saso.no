@@ -8,6 +8,7 @@ import Logo from './Logo'
 const NAV_LINKS = [
   { href: '/#historien', label: 'Historien' },
   { href: '/#prosjekter', label: 'Prosjekter' },
+  { href: '/vasker', label: 'Vasker' },
   { href: '/#presse', label: 'Presse' },
   { href: '/#leietakere', label: 'Leietakere' },
   { href: '/#partnere', label: 'Partnere' },
@@ -39,15 +40,25 @@ export default function Header() {
         </Link>
 
         <nav className="hidden gap-7 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-ink-700 transition-colors hover:text-oak-600"
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.href.includes('#') ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-ink-700 transition-colors hover:text-oak-600"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                to={link.href}
+                className="text-sm font-medium text-ink-700 transition-colors hover:text-oak-600"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
         </nav>
 
         <a
@@ -76,16 +87,27 @@ export default function Header() {
 
       {open && (
         <nav className="flex flex-col gap-1 border-t border-line bg-bone-50 px-6 pb-6 lg:hidden">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="rounded-lg px-3 py-3 text-base font-medium text-ink-950 hover:bg-bone-100"
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.href.includes('#') ? (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-3 text-base font-medium text-ink-950 hover:bg-bone-100"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                to={link.href}
+                onClick={() => setOpen(false)}
+                className="rounded-lg px-3 py-3 text-base font-medium text-ink-950 hover:bg-bone-100"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
           <a
             href="/#kontakt"
             onClick={() => setOpen(false)}
